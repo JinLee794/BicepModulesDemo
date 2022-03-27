@@ -1,0 +1,44 @@
+{
+    "variables": [
+        {
+            "name": "defaultLocation",
+            "value": "EastUS"
+        },
+        {
+            "name": "resourceGroupName",
+            "value": "bicep-sandbox"
+        },
+        {
+            "name": "templateSpecsRGName",
+            "value": "bicep-sandbox"
+        },
+        {
+            "name": "templateSpecsRGLocation",
+            "value": "EastUS"
+        },
+        {
+            "name": "templateSpecsDescription",
+            "value": "This is a module from the [Common Azure Resource Modules Library - BicepModulesDemo]"
+        },
+        {
+            "name": "templateSpecsDoPublish",
+            "value": "true"
+        },
+        {
+            "name": "bicepRegistryName",
+            "value": "bicepsandboxmodules"
+        },
+        {
+            "name": "bicepRegistryRGName",
+            "value": "bicep-sandbox"
+        },
+        {
+            "name": "bicepRegistryRgLocation",
+            "value": "EastUS"
+        },
+        {
+            "name": "bicepRegistryDoPublish",
+            "value": "true"
+        }
+    ]
+}
