@@ -14,9 +14,8 @@ param resourceId string
   'User'
   'ForeignGroup'
   'Device'
-  ''
 ])
-param principalType string = ''
+param principalType string
 
 @sys.description('Optional. Description of role assignment')
 param description string = ''
@@ -55,7 +54,7 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-10-01-prev
     description: description
     roleDefinitionId: contains(builtInRoleNames, roleDefinitionIdOrName) ? builtInRoleNames[roleDefinitionIdOrName] : roleDefinitionIdOrName
     principalId: principalId
-    principalType: !empty(principalType) ? principalType : null
+    principalType: principalType
   }
   scope: key
 }]
