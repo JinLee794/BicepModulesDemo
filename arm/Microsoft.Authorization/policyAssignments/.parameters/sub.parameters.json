@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uat-sub-polAss"
+            "value": "<<namePrefix>>-uat-sub-polAss"
         },
         "displayName": {
             "value": "[Display Name] Policy Assignment at the subscription scope"

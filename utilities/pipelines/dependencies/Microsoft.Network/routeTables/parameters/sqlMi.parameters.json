@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "adp-bicepdemo-uat-az-udr-x-sqlmi"
+            "value": "adp-<<namePrefix>>-uat-az-udr-x-sqlmi"
         }
     }
 }

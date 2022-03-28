@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "roleName": {
-            "value": "bicepdemo-uat-az-testRole-mg"
+            "value": "<<namePrefix>>-uat-az-testRole-mg"
         },
         "description": {
             "value": "Test Custom Role Definition Standard (management group scope)"

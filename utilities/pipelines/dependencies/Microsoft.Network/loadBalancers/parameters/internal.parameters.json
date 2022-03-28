@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "adp-bicepdemo-uat-az-lb-internal-001"
+            "value": "adp-<<namePrefix>>-uat-az-lb-internal-001"
         },
         "loadBalancerSku": {
             "value": "Standard"
@@ -12,7 +12,7 @@
             "value": [
                 {
                     "name": "privateIPConfig1",
-                    "subnetId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-bicepdemo-uat-az-vnet-x-001/subnets/bicepdemo-uat-az-subnet-x-001"
+                    "subnetId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-001"
                 }
             ]
         },

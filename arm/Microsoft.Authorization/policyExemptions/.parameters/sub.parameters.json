@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uat-sub-polexem"
+            "value": "<<namePrefix>>-uat-sub-polexem"
         },
         "displayName": {
             "value": "[Display Name] policy exempt (subscription scope)"
         },
         "policyAssignmentId": {
-            "value": "/subscriptions/<<subscriptionId>>/providers/Microsoft.Authorization/policyAssignments/adp-bicepdemo-uat-sb-pass-loc-rg"
+            "value": "/subscriptions/<<subscriptionId>>/providers/Microsoft.Authorization/policyAssignments/adp-<<namePrefix>>-uat-sb-pass-loc-rg"
         },
         "exemptionCategory": {
             "value": "Waiver"

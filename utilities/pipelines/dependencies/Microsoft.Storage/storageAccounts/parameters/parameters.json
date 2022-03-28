@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "name": {
-      "value": "adpbicepdemo-uatazsax001"
+      "value": "adp<<namePrefix>>-uatazsax001"
     },
     "storageAccountKind": {
       "value": "StorageV2"

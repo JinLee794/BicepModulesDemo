@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "name": {
-      "value": "adp-bicepdemo-uat-az-vnet-x-002"
+      "value": "adp-<<namePrefix>>-uat-az-vnet-x-002"
     },
     "addressPrefixes": {
       "value": [
@@ -15,7 +15,7 @@
         {
           "name": "AzureBastionSubnet", // Bastion subnet
           "addressPrefix": "10.1.5.0/24",
-          "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-bicepdemo-uat-az-nsg-x-bastion"
+          "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-<<namePrefix>>-uat-az-nsg-x-bastion"
         }
       ]
     }

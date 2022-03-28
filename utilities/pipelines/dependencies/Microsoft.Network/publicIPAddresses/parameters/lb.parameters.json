@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "name": {
-      "value": "adp-bicepdemo-uat-az-pip-x-lb"
+      "value": "adp-<<namePrefix>>-uat-az-pip-x-lb"
     },
     "skuName": {
       "value": "Standard"

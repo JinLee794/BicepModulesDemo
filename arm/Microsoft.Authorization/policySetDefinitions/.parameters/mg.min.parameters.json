@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uat-mg-min-policySet"
+            "value": "<<namePrefix>>-uat-mg-min-policySet"
         },
         "policyDefinitions": {
             "value": [

@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uat-mg-polAss"
+            "value": "<<namePrefix>>-uat-mg-polAss"
         },
         "displayName": {
             "value": "[Display Name] Policy Assignment at the management group scope"

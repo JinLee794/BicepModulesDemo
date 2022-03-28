@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uat-sub-policySet"
+            "value": "<<namePrefix>>-uat-sub-policySet"
         },
         "displayName": {
             "value": "[DisplayName] This policy set definition is deployed at subscription scope"

@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemouatazsax001"
+            "value": "<<namePrefix>>uatazsax001"
         },
         "storageAccountSku": {
             "value": "Standard_LRS"
@@ -20,19 +20,19 @@
         "privateEndpoints": {
             "value": [
                 {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-bicepdemo-uat-az-vnet-x-001/subnets/bicepdemo-uat-az-subnet-x-005-privateEndpoints",
+                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
                     "service": "blob"
                 },
                 {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-bicepdemo-uat-az-vnet-x-001/subnets/bicepdemo-uat-az-subnet-x-005-privateEndpoints",
+                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
                     "service": "table"
                 },
                 {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-bicepdemo-uat-az-vnet-x-001/subnets/bicepdemo-uat-az-subnet-x-005-privateEndpoints",
+                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
                     "service": "queue"
                 },
                 {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-bicepdemo-uat-az-vnet-x-001/subnets/bicepdemo-uat-az-subnet-x-005-privateEndpoints",
+                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
                     "service": "file"
                 }
             ]
@@ -48,10 +48,10 @@
         "blobServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adpbicepdemo-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-bicepdemo-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-bicepdemo-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-bicepdemo-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
+                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
+                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
+                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
                 "containers": [
                     {
                         "name": "avdscripts",
@@ -80,10 +80,10 @@
         "fileServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adpbicepdemo-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-bicepdemo-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-bicepdemo-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-bicepdemo-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
+                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
+                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
+                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
                 "shares": [
                     {
                         "name": "avdprofiles",
@@ -109,10 +109,10 @@
         "tableServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adpbicepdemo-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-bicepdemo-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-bicepdemo-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-bicepdemo-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
+                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
+                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
+                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
                 "tables": [
                     "table1",
                     "table2"
@@ -122,10 +122,10 @@
         "queueServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adpbicepdemo-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-bicepdemo-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-bicepdemo-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-bicepdemo-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
+                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
+                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
+                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
                 "queues": [
                     {
                         "name": "queue1",
@@ -153,7 +153,7 @@
         },
         "userAssignedIdentities": {
             "value": {
-                "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/adp-bicepdemo-uat-az-msi-x-001": {}
+                "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/adp-<<namePrefix>>-uat-az-msi-x-001": {}
             }
         },
         "roleAssignments": {
@@ -172,16 +172,16 @@
             "value": 7
         },
         "diagnosticStorageAccountId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adpbicepdemo-uatazsax001"
+            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001"
         },
         "diagnosticWorkspaceId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-bicepdemo-uat-az-law-x-001"
+            "value": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001"
         },
         "diagnosticEventHubAuthorizationRuleId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-bicepdemo-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey"
+            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey"
         },
         "diagnosticEventHubName": {
-            "value": "adp-bicepdemo-uat-az-evh-x-001"
+            "value": "adp-<<namePrefix>>-uat-az-evh-x-001"
         }
     }
 }
