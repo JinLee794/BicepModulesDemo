@@ -49,9 +49,9 @@ Below you can find an example for the subnet property's usage. For all remaining
             "addressPrefix": "10.0.255.0/24"
         },
         {
-            "name": "<<namePrefix>>-az-subnet-x-001",
+            "name": "bicepdemo-uat-az-subnet-x-001",
             "addressPrefix": "10.0.0.0/24",
-            "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-<<namePrefix>>-az-nsg-x-001",
+            "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-bicepdemo-uat-az-nsg-x-001",
             "serviceEndpoints": [
                 {
                     "service": "Microsoft.Storage"
@@ -60,7 +60,7 @@ Below you can find an example for the subnet property's usage. For all remaining
                     "service": "Microsoft.Sql"
                 }
             ],
-            "routeTableId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/routeTables/adp-<<namePrefix>>-az-udr-x-001",
+            "routeTableId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/routeTables/adp-bicepdemo-uat-az-udr-x-001",
             "delegations": [
                 {
                     "name": "netappDel",
@@ -94,7 +94,7 @@ As the virtual network peering array allows you to deploy not only a one-way but
 "virtualNetworkPeerings": {
     "value": [
         {
-            "remoteVirtualNetworkId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-az-vnet-x-peer01",
+            "remoteVirtualNetworkId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-bicepdemo-uat-az-vnet-x-peer01",
             "allowForwardedTraffic": true,
             "allowGatewayTransit": false,
             "allowVirtualNetworkAccess": true,

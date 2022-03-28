@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "roleName": {
-            "value": "<<namePrefix>>-az-testRole-sub"
+            "value": "bicepdemo-uat-az-testRole-sub"
         },
         "description": {
             "value": "Test Custom Role Definition Standard (subscription scope)"

@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "<<namePrefix>>-az-rg-x-001"
+            "value": "bicepdemo-uat-az-rg-x-001"
         },
         "tags": {
             "value": {
@@ -16,7 +16,8 @@
                     "roleDefinitionIdOrName": "Reader",
                     "principalIds": [
                         "<<deploymentSpId>>"
-                    ]
+                    ],
+                    "principalType": "ServicePrincipal"
                 }
             ]
         }

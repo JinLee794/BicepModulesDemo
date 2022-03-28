@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "adp-<<namePrefix>>-mg-pass-loc-rg"
+            "value": "adp-bicepdemo-uat-mg-pass-loc-rg"
         },
         "displayName": {
             "value": "[Depedency] Audit resource location matches resource group location (management group scope)"

@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "<<namePrefix>>-mg-policyDef"
+            "value": "bicepdemo-uat-mg-policyDef"
         },
         "displayName": {
             "value": "[DisplayName] This policy definition is deployed at the management group scope"

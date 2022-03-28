@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "adp<<namePrefix>>azsalaw001"
+            "value": "adpbicepdemo-uatazsalaw001"
         },
         "storageAccountKind": {
             "value": "StorageV2"

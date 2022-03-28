@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "adp-<<namePrefix>>-az-vnet-x-vhub"
+            "value": "adp-bicepdemo-uat-az-vnet-x-vhub"
         },
         "addressPrefixes": {
             "value": [
@@ -15,7 +15,7 @@
                 {
                     "name": "default", // Hub connection subnet
                     "addressPrefix": "10.7.0.0/24",
-                    "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-<<namePrefix>>-az-nsg-x-001"
+                    "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-bicepdemo-uat-az-nsg-x-001"
                 }
             ]
         }

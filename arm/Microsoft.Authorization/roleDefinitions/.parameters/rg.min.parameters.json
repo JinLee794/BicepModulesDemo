@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "roleName": {
-            "value": "<<namePrefix>>-az-testRole-rg-min"
+            "value": "bicepdemo-uat-az-testRole-rg-min"
         },
         "actions": {
             "value": [

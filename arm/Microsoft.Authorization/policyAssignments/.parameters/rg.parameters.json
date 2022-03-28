@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "<<namePrefix>>-rg-polAss"
+            "value": "bicepdemo-uat-rg-polAss"
         },
         "displayName": {
             "value": "[Display Name] Policy Assignment at the resource group scope"
@@ -41,7 +41,7 @@
         },
         "notScopes": {
             "value": [
-                "/subscriptions/<<subscriptionId>>/resourceGroups/<<resourceGroupName>>/providers/Microsoft.KeyVault/vaults/adp-<<namePrefix>>-az-kv-x-001"
+                "/subscriptions/<<subscriptionId>>/resourceGroups/<<resourceGroupName>>/providers/Microsoft.KeyVault/vaults/adp-bicepdemo-uat-az-kv-x-001"
             ]
         },
         "identity": {

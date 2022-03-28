@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "<<namePrefix>>-az-vnet-x-001"
+            "value": "bicepdemo-uat-az-vnet-x-001"
         },
         "addressPrefixes": {
             "value": [
@@ -17,9 +17,9 @@
                     "addressPrefix": "10.0.255.0/24"
                 },
                 {
-                    "name": "<<namePrefix>>-az-subnet-x-001",
+                    "name": "bicepdemo-uat-az-subnet-x-001",
                     "addressPrefix": "10.0.0.0/24",
-                    "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-<<namePrefix>>-az-nsg-x-001",
+                    "networkSecurityGroupId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/networkSecurityGroups/adp-bicepdemo-uat-az-nsg-x-001",
                     "serviceEndpoints": [
                         {
                             "service": "Microsoft.Storage"
@@ -28,10 +28,10 @@
                             "service": "Microsoft.Sql"
                         }
                     ],
-                    "routeTableId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/routeTables/adp-<<namePrefix>>-az-udr-x-001"
+                    "routeTableId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/routeTables/adp-bicepdemo-uat-az-udr-x-001"
                 },
                 {
-                    "name": "<<namePrefix>>-az-subnet-x-002",
+                    "name": "bicepdemo-uat-az-subnet-x-002",
                     "addressPrefix": "10.0.3.0/24",
                     "delegations": [
                         {
@@ -43,7 +43,7 @@
                     ]
                 },
                 {
-                    "name": "<<namePrefix>>-az-subnet-x-003",
+                    "name": "bicepdemo-uat-az-subnet-x-003",
                     "addressPrefix": "10.0.6.0/24",
                     "privateEndpointNetworkPolicies": "Disabled",
                     "privateLinkServiceNetworkPolicies": "Enabled"
@@ -64,16 +64,16 @@
             "value": 7
         },
         "diagnosticStorageAccountId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>azsax001"
+            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adpbicepdemo-uatazsax001"
         },
         "diagnosticWorkspaceId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-az-law-x-001"
+            "value": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-bicepdemo-uat-az-law-x-001"
         },
         "diagnosticEventHubAuthorizationRuleId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey"
+            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-bicepdemo-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey"
         },
         "diagnosticEventHubName": {
-            "value": "adp-<<namePrefix>>-az-evh-x-001"
+            "value": "adp-bicepdemo-uat-az-evh-x-001"
         }
     }
 }
