@@ -32,7 +32,6 @@ Above diagram outlines the high-level overview of how the structure outlined in 
 
 | Name | Status |
 | - | - |
-| [Deployment Scripts](https://github.com/JinLee794/BicepModulesDemo/tree/main/arm/Microsoft.Resources/deploymentScripts) | [!['Resources: DeploymentScripts'](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.resources.deploymentscripts.yml/badge.svg)](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.resources.deploymentscripts.yml) |
 | [Key Vaults](https://github.com/JinLee794/BicepModulesDemo/tree/main/arm/Microsoft.KeyVault/vaults) | [!['KeyVault: Vaults'](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.keyvault.vaults.yml/badge.svg)](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.keyvault.vaults.yml) |
 | [Network Security Groups](https://github.com/JinLee794/BicepModulesDemo/tree/main/arm/Microsoft.Network/networkSecurityGroups) | [!['Network: NetworkSecurityGroups'](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.network.networksecuritygroups.yml/badge.svg)](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.network.networksecuritygroups.yml) |
 | [Policy Assignments](https://github.com/JinLee794/BicepModulesDemo/tree/main/arm/Microsoft.Authorization/policyAssignments) | [!['Authorization: PolicyAssignments'](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.authorization.policyassignments.yml/badge.svg)](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.authorization.policyassignments.yml) |

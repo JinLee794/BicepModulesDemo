@@ -67,7 +67,7 @@ module roleAssignment_mg 'managementGroup/deploy.bicep' = if (empty(subscription
     principalId: principalId
     managementGroupId: managementGroupId
     description: !empty(description) ? description : ''
-    principalType: !empty(principalType) ? principalType : ''
+    principalType: principalType
     delegatedManagedIdentityResourceId: !empty(delegatedManagedIdentityResourceId) ? delegatedManagedIdentityResourceId : ''
     conditionVersion: conditionVersion
     condition: !empty(condition) ? condition : ''
@@ -83,7 +83,7 @@ module roleAssignment_sub 'subscription/deploy.bicep' = if (!empty(subscriptionI
     principalId: principalId
     subscriptionId: subscriptionId
     description: !empty(description) ? description : ''
-    principalType: !empty(principalType) ? principalType : ''
+    principalType: principalType
     delegatedManagedIdentityResourceId: !empty(delegatedManagedIdentityResourceId) ? delegatedManagedIdentityResourceId : ''
     conditionVersion: conditionVersion
     condition: !empty(condition) ? condition : ''
@@ -100,7 +100,7 @@ module roleAssignment_rg 'resourceGroup/deploy.bicep' = if (!empty(resourceGroup
     subscriptionId: subscriptionId
     resourceGroupName: resourceGroupName
     description: !empty(description) ? description : ''
-    principalType: !empty(principalType) ? principalType : ''
+    principalType: principalType
     delegatedManagedIdentityResourceId: !empty(delegatedManagedIdentityResourceId) ? delegatedManagedIdentityResourceId : ''
     conditionVersion: conditionVersion
     condition: !empty(condition) ? condition : ''
