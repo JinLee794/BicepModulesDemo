@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uat-az-kvlt-x-001"
+            "value": "bicepdemo-az-uat001"
         },
         "softDeleteRetentionInDays": {
             "value": 7
