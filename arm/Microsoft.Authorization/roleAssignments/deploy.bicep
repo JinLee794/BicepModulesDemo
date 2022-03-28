@@ -90,10 +90,10 @@ module roleAssignment_rg 'resourceGroup/deploy.bicep' = if (!empty(resourceGroup
 }
 
 @sys.description('The GUID of the Role Assignment')
-output name string = empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_mg.outputs.name : (!empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_sub.outputs.name : roleAssignment_rg.outputs.name)
+output name string = !empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_sub.outputs.name : roleAssignment_rg.outputs.name
 
 @sys.description('The resource ID of the Role Assignment')
-output resourceId string = empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_mg.outputs.resourceId : (!empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_sub.outputs.resourceId : roleAssignment_rg.outputs.resourceId)
+output resourceId string = !empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_sub.outputs.resourceId : roleAssignment_rg.outputs.resourceId
 
 @sys.description('The scope this Role Assignment applies to')
-output scope string = empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_mg.outputs.scope : (!empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_sub.outputs.scope : roleAssignment_rg.outputs.scope)
+output scope string = !empty(subscriptionId) && empty(resourceGroupName) ? roleAssignment_sub.outputs.scope : roleAssignment_rg.outputs.scope
