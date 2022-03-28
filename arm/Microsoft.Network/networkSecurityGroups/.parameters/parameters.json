@@ -77,7 +77,6 @@
                     "roleDefinitionIdOrName": "Reader",
                     "principalType": "ServicePrincipal",
                     "principalIds": [
-
                         "<<deploymentSpId>>"
                     ]
                 }
