@@ -240,7 +240,7 @@ module virtualNetwork_rbac '.bicep/nested_rbac.bicep' = [for (roleAssignment, in
   params: {
     description: contains(roleAssignment, 'description') ? roleAssignment.description : ''
     principalIds: roleAssignment.principalIds
-    principalType: contains(roleAssignment, 'principalType') ? roleAssignment.principalType : ''
+    principalType: contains(roleAssignment, 'principalType') ? roleAssignment.principalType : null
     roleDefinitionIdOrName: roleAssignment.roleDefinitionIdOrName
     resourceId: virtualNetwork.id
   }

@@ -18,7 +18,7 @@
     .EXAMPLE
     Install-CustomModule @{ Name = 'Pester' } C:\Modules
 
-    Installes pester and saves it to C:\Modules
+    Installs pester and saves it to C:\Modules
 #>
 function Install-CustomModule {
 

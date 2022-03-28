@@ -102,311 +102,311 @@ Describe 'File/folder tests' -Tag Modules {
     }
 }
 
-Describe 'Readme tests' -Tag Readme {
+# Describe 'Readme tests' -Tag Readme {
 
-    Context 'Readme content tests' {
+#     Context 'Readme content tests' {
 
-        $readmeFolderTestCases = [System.Collections.ArrayList] @()
-        foreach ($moduleFolderPath in $moduleFolderPaths) {
+#         $readmeFolderTestCases = [System.Collections.ArrayList] @()
+#         foreach ($moduleFolderPath in $moduleFolderPaths) {
 
-            if (Test-Path (Join-Path $moduleFolderPath 'deploy.bicep')) {
-                $templateContent = az bicep build --file (Join-Path $moduleFolderPath 'deploy.bicep') --stdout | ConvertFrom-Json -AsHashtable
-            } elseif (Test-Path (Join-Path $moduleFolderPath 'deploy.json')) {
-                $templateContent = Get-Content (Join-Path $moduleFolderPath 'deploy.json') -Raw | ConvertFrom-Json -AsHashtable
-            } else {
-                throw "No template file found in folder [$moduleFolderPath]"
-            }
+#             if (Test-Path (Join-Path $moduleFolderPath 'deploy.bicep')) {
+#                 $templateContent = az bicep build --file (Join-Path $moduleFolderPath 'deploy.bicep') --stdout | ConvertFrom-Json -AsHashtable
+#             } elseif (Test-Path (Join-Path $moduleFolderPath 'deploy.json')) {
+#                 $templateContent = Get-Content (Join-Path $moduleFolderPath 'deploy.json') -Raw | ConvertFrom-Json -AsHashtable
+#             } else {
+#                 throw "No template file found in folder [$moduleFolderPath]"
+#             }
 
-            $readmeFolderTestCases += @{
-                moduleFolderName = $moduleFolderPath.Replace('\', '/').Split('/arm/')[1]
-                moduleFolderPath = $moduleFolderPath
-                templateContent  = $templateContent
-                readMeContent    = Get-Content (Join-Path -Path $moduleFolderPath 'readme.md')
-            }
-        }
+#             $readmeFolderTestCases += @{
+#                 moduleFolderName = $moduleFolderPath.Replace('\', '/').Split('/arm/')[1]
+#                 moduleFolderPath = $moduleFolderPath
+#                 templateContent  = $templateContent
+#                 readMeContent    = Get-Content (Join-Path -Path $moduleFolderPath 'readme.md')
+#             }
+#         }
 
-        It '[<moduleFolderName>] Readme.md file should not be empty' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $readMeContent
-            )
-            $readMeContent | Should -Not -Be $null
-        }
+#         It '[<moduleFolderName>] Readme.md file should not be empty' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $readMeContent
+#             )
+#             $readMeContent | Should -Not -Be $null
+#         }
 
-        It '[<moduleFolderName>] Readme.md file should contain the these titles in order: Resource Types, Parameters, Outputs, Template references' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] Readme.md file should contain the these titles in order: Resource Types, Parameters, Outputs, Template references' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $readMeContent
+#             )
 
-            $ReadmeHTML = ($readMeContent | ConvertFrom-Markdown -ErrorAction SilentlyContinue).Html
+#             $ReadmeHTML = ($readMeContent | ConvertFrom-Markdown -ErrorAction SilentlyContinue).Html
 
-            $Heading2Order = @('Resource Types', 'parameters', 'Outputs', 'Template references')
-            $Headings2List = @()
-            foreach ($H in $ReadmeHTML) {
-                if ($H.Contains('<h2')) {
-                    $StartingIndex = $H.IndexOf('>') + 1
-                    $EndIndex = $H.LastIndexof('<')
-                    $headings2List += ($H.Substring($StartingIndex, $EndIndex - $StartingIndex))
-                }
-            }
+#             $Heading2Order = @('Resource Types', 'parameters', 'Outputs', 'Template references')
+#             $Headings2List = @()
+#             foreach ($H in $ReadmeHTML) {
+#                 if ($H.Contains('<h2')) {
+#                     $StartingIndex = $H.IndexOf('>') + 1
+#                     $EndIndex = $H.LastIndexof('<')
+#                     $headings2List += ($H.Substring($StartingIndex, $EndIndex - $StartingIndex))
+#                 }
+#             }
 
-            $differentiatingItems = $Heading2Order | Where-Object { $Headings2List -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ('list of heading titles missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
-        }
+#             $differentiatingItems = $Heading2Order | Where-Object { $Headings2List -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ('list of heading titles missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
+#         }
 
-        It '[<moduleFolderName>] Resources section should contain all resources from the template file' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $templateContent,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] Resources section should contain all resources from the template file' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $templateContent,
+#                 $readMeContent
+#             )
 
-            # Get ReadMe data
-            $resourcesSectionStartIndex = 0
-            while ($readMeContent[$resourcesSectionStartIndex] -notlike '*# Resource Types' -and -not ($resourcesSectionStartIndex -ge $readMeContent.count)) {
-                $resourcesSectionStartIndex++
-            }
+#             # Get ReadMe data
+#             $resourcesSectionStartIndex = 0
+#             while ($readMeContent[$resourcesSectionStartIndex] -notlike '*# Resource Types' -and -not ($resourcesSectionStartIndex -ge $readMeContent.count)) {
+#                 $resourcesSectionStartIndex++
+#             }
 
-            $resourcesTableStartIndex = $resourcesSectionStartIndex + 1
-            while ($readMeContent[$resourcesTableStartIndex] -notlike '*|*' -and -not ($resourcesTableStartIndex -ge $readMeContent.count)) {
-                $resourcesTableStartIndex++
-            }
+#             $resourcesTableStartIndex = $resourcesSectionStartIndex + 1
+#             while ($readMeContent[$resourcesTableStartIndex] -notlike '*|*' -and -not ($resourcesTableStartIndex -ge $readMeContent.count)) {
+#                 $resourcesTableStartIndex++
+#             }
 
-            $resourcesTableEndIndex = $resourcesTableStartIndex + 2
-            while ($readMeContent[$resourcesTableEndIndex] -like '|*' -and -not ($resourcesTableEndIndex -ge $readMeContent.count)) {
-                $resourcesTableEndIndex++
-            }
+#             $resourcesTableEndIndex = $resourcesTableStartIndex + 2
+#             while ($readMeContent[$resourcesTableEndIndex] -like '|*' -and -not ($resourcesTableEndIndex -ge $readMeContent.count)) {
+#                 $resourcesTableEndIndex++
+#             }
 
-            $ReadMeResourcesList = [System.Collections.ArrayList]@()
-            for ($index = $resourcesTableStartIndex + 2; $index -lt $resourcesTableEndIndex; $index++) {
-                $ReadMeResourcesList += $readMeContent[$index].Split('|')[1].Replace('`', '').Trim()
-            }
+#             $ReadMeResourcesList = [System.Collections.ArrayList]@()
+#             for ($index = $resourcesTableStartIndex + 2; $index -lt $resourcesTableEndIndex; $index++) {
+#                 $ReadMeResourcesList += $readMeContent[$index].Split('|')[1].Replace('`', '').Trim()
+#             }
 
-            # Get template data
-            $templateResources = (Get-NestedResourceList -TemplateContent $templateContent | Where-Object {
-                    $_.type -notin @('Microsoft.Resources/deployments') -and $_ }).type | Select-Object -Unique
+#             # Get template data
+#             $templateResources = (Get-NestedResourceList -TemplateContent $templateContent | Where-Object {
+#                     $_.type -notin @('Microsoft.Resources/deployments') -and $_ }).type | Select-Object -Unique
 
-            # Compare
-            $differentiatingItems = $templateResources | Where-Object { $ReadMeResourcesList -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ("list of template resources missing from the ReadMe's list [{0}] should be empty" -f ($differentiatingItems -join ','))
-        }
+#             # Compare
+#             $differentiatingItems = $templateResources | Where-Object { $ReadMeResourcesList -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ("list of template resources missing from the ReadMe's list [{0}] should be empty" -f ($differentiatingItems -join ','))
+#         }
 
-        It '[<moduleFolderName>] Resources section should not contain more resources as in the template file' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $templateContent,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] Resources section should not contain more resources as in the template file' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $templateContent,
+#                 $readMeContent
+#             )
 
-            # Get ReadMe data
-            $resourcesSectionStartIndex = 0
-            while ($readMeContent[$resourcesSectionStartIndex] -notlike '*# Resource Types' -and -not ($resourcesSectionStartIndex -ge $readMeContent.count)) {
-                $resourcesSectionStartIndex++
-            }
+#             # Get ReadMe data
+#             $resourcesSectionStartIndex = 0
+#             while ($readMeContent[$resourcesSectionStartIndex] -notlike '*# Resource Types' -and -not ($resourcesSectionStartIndex -ge $readMeContent.count)) {
+#                 $resourcesSectionStartIndex++
+#             }
 
-            $resourcesTableStartIndex = $resourcesSectionStartIndex + 1
-            while ($readMeContent[$resourcesTableStartIndex] -notlike '*|*' -and -not ($resourcesTableStartIndex -ge $readMeContent.count)) {
-                $resourcesTableStartIndex++
-            }
+#             $resourcesTableStartIndex = $resourcesSectionStartIndex + 1
+#             while ($readMeContent[$resourcesTableStartIndex] -notlike '*|*' -and -not ($resourcesTableStartIndex -ge $readMeContent.count)) {
+#                 $resourcesTableStartIndex++
+#             }
 
-            $resourcesTableEndIndex = $resourcesTableStartIndex + 2
-            while ($readMeContent[$resourcesTableEndIndex] -like '|*' -and -not ($resourcesTableEndIndex -ge $readMeContent.count)) {
-                $resourcesTableEndIndex++
-            }
+#             $resourcesTableEndIndex = $resourcesTableStartIndex + 2
+#             while ($readMeContent[$resourcesTableEndIndex] -like '|*' -and -not ($resourcesTableEndIndex -ge $readMeContent.count)) {
+#                 $resourcesTableEndIndex++
+#             }
 
-            $ReadMeResourcesList = [System.Collections.ArrayList]@()
-            for ($index = $resourcesTableStartIndex + 2; $index -lt $resourcesTableEndIndex; $index++) {
-                $ReadMeResourcesList += $readMeContent[$index].Split('|')[1].Replace('`', '').Trim()
-            }
+#             $ReadMeResourcesList = [System.Collections.ArrayList]@()
+#             for ($index = $resourcesTableStartIndex + 2; $index -lt $resourcesTableEndIndex; $index++) {
+#                 $ReadMeResourcesList += $readMeContent[$index].Split('|')[1].Replace('`', '').Trim()
+#             }
 
-            # Get template data
-            $templateResources = (Get-NestedResourceList -TemplateContent $templateContent | Where-Object {
-                    $_.type -notin @('Microsoft.Resources/deployments') -and $_ }).type | Select-Object -Unique
+#             # Get template data
+#             $templateResources = (Get-NestedResourceList -TemplateContent $templateContent | Where-Object {
+#                     $_.type -notin @('Microsoft.Resources/deployments') -and $_ }).type | Select-Object -Unique
 
-            # Compare
-            $differentiatingItems = $templateResources | Where-Object { $ReadMeResourcesList -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ("list of resources in the ReadMe's list [{0}] not in the template file should be empty" -f ($differentiatingItems -join ','))
-        }
+#             # Compare
+#             $differentiatingItems = $templateResources | Where-Object { $ReadMeResourcesList -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ("list of resources in the ReadMe's list [{0}] not in the template file should be empty" -f ($differentiatingItems -join ','))
+#         }
 
-        It '[<moduleFolderName>] parameters section should contain a table with these column names in order: Parameter Name, Type, Default Value, Possible values, Description' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] parameters section should contain a table with these column names in order: Parameter Name, Type, Default Value, Possible values, Description' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $readMeContent
+#             )
 
-            $ReadmeHTML = ($readMeContent | ConvertFrom-Markdown -ErrorAction SilentlyContinue).Html
-            $ParameterHeadingOrder = @('Parameter Name', 'Type', 'Default Value', 'Allowed Values', 'Description')
-            $ComparisonFlag = 0
-            $Headings = @(@())
-            foreach ($H in $ReadmeHTML) {
-                if ($H.Contains('<h')) {
-                    $StartingIndex = $H.IndexOf('>') + 1
-                    $EndIndex = $H.LastIndexof('<')
-                    $Headings += , (@($H.Substring($StartingIndex, $EndIndex - $StartingIndex), $ReadmeHTML.IndexOf($H)))
-                }
-            }
-            $HeadingIndex = $Headings | Where-Object { $_ -eq 'parameters' }
-            if ($HeadingIndex -eq $null) {
-                Write-Verbose "[parameters section should contain a table with these column names in order: Parameter Name, Type, Default Value, Possible values, Description] Error At ($moduleFolderName)" -Verbose
-                $true | Should -Be $false
-            }
-            $ParameterHeadingsList = $ReadmeHTML[$HeadingIndex[1] + 2].Replace('<p>|', '').Replace('|</p>', '').Split('|').Trim()
-            if (Compare-Object -ReferenceObject $ParameterHeadingOrder -DifferenceObject $ParameterHeadingsList -SyncWindow 0) {
-                $ComparisonFlag = $ComparisonFlag + 1
-            }
-            ($ComparisonFlag -gt 2) | Should -Be $false
-        }
+#             $ReadmeHTML = ($readMeContent | ConvertFrom-Markdown -ErrorAction SilentlyContinue).Html
+#             $ParameterHeadingOrder = @('Parameter Name', 'Type', 'Default Value', 'Allowed Values', 'Description')
+#             $ComparisonFlag = 0
+#             $Headings = @(@())
+#             foreach ($H in $ReadmeHTML) {
+#                 if ($H.Contains('<h')) {
+#                     $StartingIndex = $H.IndexOf('>') + 1
+#                     $EndIndex = $H.LastIndexof('<')
+#                     $Headings += , (@($H.Substring($StartingIndex, $EndIndex - $StartingIndex), $ReadmeHTML.IndexOf($H)))
+#                 }
+#             }
+#             $HeadingIndex = $Headings | Where-Object { $_ -eq 'parameters' }
+#             if ($HeadingIndex -eq $null) {
+#                 Write-Verbose "[parameters section should contain a table with these column names in order: Parameter Name, Type, Default Value, Possible values, Description] Error At ($moduleFolderName)" -Verbose
+#                 $true | Should -Be $false
+#             }
+#             $ParameterHeadingsList = $ReadmeHTML[$HeadingIndex[1] + 2].Replace('<p>|', '').Replace('|</p>', '').Split('|').Trim()
+#             if (Compare-Object -ReferenceObject $ParameterHeadingOrder -DifferenceObject $ParameterHeadingsList -SyncWindow 0) {
+#                 $ComparisonFlag = $ComparisonFlag + 1
+#             }
+#             ($ComparisonFlag -gt 2) | Should -Be $false
+#         }
 
-        It '[<moduleFolderName>] parameters section should contain all parameters from the template file' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $templateContent,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] parameters section should contain all parameters from the template file' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $templateContent,
+#                 $readMeContent
+#             )
 
-            # Get Template data
-            $parameters = $templateContent.parameters.Keys
+#             # Get Template data
+#             $parameters = $templateContent.parameters.Keys
 
-            # Get ReadMe data
-            ## Get section start index
-            $parametersSectionStartIndex = 0
-            while ($readMeContent[$parametersSectionStartIndex] -notlike '*# Parameters' -and -not ($parametersSectionStartIndex -ge $readMeContent.count)) {
-                $parametersSectionStartIndex++
-            }
-            Write-Verbose ("Start row of the parameters section in the readme: $parametersSectionStartIndex")
+#             # Get ReadMe data
+#             ## Get section start index
+#             $parametersSectionStartIndex = 0
+#             while ($readMeContent[$parametersSectionStartIndex] -notlike '*# Parameters' -and -not ($parametersSectionStartIndex -ge $readMeContent.count)) {
+#                 $parametersSectionStartIndex++
+#             }
+#             Write-Verbose ("Start row of the parameters section in the readme: $parametersSectionStartIndex")
 
-            if ($parametersSectionStartIndex -ge $readMeContent.count) {
-                throw 'Parameters section is missing in the Readme. Please add and re-run the tests.'
-            }
+#             if ($parametersSectionStartIndex -ge $readMeContent.count) {
+#                 throw 'Parameters section is missing in the Readme. Please add and re-run the tests.'
+#             }
 
-            ## Get section end index
-            $parametersSectionEndIndex = $parametersSectionStartIndex + 1
-            while ($readMeContent[$parametersSectionEndIndex] -notlike '*# *' -and -not ($parametersSectionEndIndex -ge $readMeContent.count)) {
-                $parametersSectionEndIndex++
-            }
-            Write-Verbose ("End row of the parameters section in the readme: $parametersSectionEndIndex")
+#             ## Get section end index
+#             $parametersSectionEndIndex = $parametersSectionStartIndex + 1
+#             while ($readMeContent[$parametersSectionEndIndex] -notlike '*# *' -and -not ($parametersSectionEndIndex -ge $readMeContent.count)) {
+#                 $parametersSectionEndIndex++
+#             }
+#             Write-Verbose ("End row of the parameters section in the readme: $parametersSectionEndIndex")
 
-            ## Iterate over all parameter tables
-            $parametersList = [System.Collections.ArrayList]@()
-            $sectionIndex = $parametersSectionStartIndex
-            while ($sectionIndex -lt $parametersSectionEndIndex) {
-                ### Get table start index
-                $parametersTableStartIndex = $sectionIndex
-                while ($readMeContent[$parametersTableStartIndex] -notlike '*|*' -and -not ($parametersTableStartIndex -ge $readMeContent.count)) {
-                    $parametersTableStartIndex++
-                }
-                Write-Verbose ("[loop] Start row of the parameter table: $parametersTableStartIndex")
+#             ## Iterate over all parameter tables
+#             $parametersList = [System.Collections.ArrayList]@()
+#             $sectionIndex = $parametersSectionStartIndex
+#             while ($sectionIndex -lt $parametersSectionEndIndex) {
+#                 ### Get table start index
+#                 $parametersTableStartIndex = $sectionIndex
+#                 while ($readMeContent[$parametersTableStartIndex] -notlike '*|*' -and -not ($parametersTableStartIndex -ge $readMeContent.count)) {
+#                     $parametersTableStartIndex++
+#                 }
+#                 Write-Verbose ("[loop] Start row of the parameter table: $parametersTableStartIndex")
 
-                ### Get table end index
-                $parametersTableEndIndex = $parametersTableStartIndex + 2 # Header row + table separator row
-                while ($readMeContent[$parametersTableEndIndex] -like '*|*' -and -not ($parametersTableEndIndex -ge $readMeContent.count)) {
-                    $parametersTableEndIndex++
-                }
-                Write-Verbose ("[loop] End row of the parameter table: $parametersTableEndIndex")
+#                 ### Get table end index
+#                 $parametersTableEndIndex = $parametersTableStartIndex + 2 # Header row + table separator row
+#                 while ($readMeContent[$parametersTableEndIndex] -like '*|*' -and -not ($parametersTableEndIndex -ge $readMeContent.count)) {
+#                     $parametersTableEndIndex++
+#                 }
+#                 Write-Verbose ("[loop] End row of the parameter table: $parametersTableEndIndex")
 
-                for ($tableIndex = $parametersTableStartIndex + 2; $tableIndex -lt $parametersTableEndIndex; $tableIndex++) {
-                    $parametersList += $readMeContent[$tableIndex].Split('|')[1].Replace('`', '').Trim()
-                }
-                $sectionIndex = $parametersTableEndIndex + 1
-            }
+#                 for ($tableIndex = $parametersTableStartIndex + 2; $tableIndex -lt $parametersTableEndIndex; $tableIndex++) {
+#                     $parametersList += $readMeContent[$tableIndex].Split('|')[1].Replace('`', '').Trim()
+#                 }
+#                 $sectionIndex = $parametersTableEndIndex + 1
+#             }
 
-            # Test
-            $differentiatingItems = $parameters | Where-Object { $parametersList -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ('list of template parameters missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
-        }
+#             # Test
+#             $differentiatingItems = $parameters | Where-Object { $parametersList -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ('list of template parameters missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
+#         }
 
-        It '[<moduleFolderName>] Outputs section should contain a table with these column names in order: Output Name, Type' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] Outputs section should contain a table with these column names in order: Output Name, Type' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $readMeContent
+#             )
 
-            # Get ReadMe data
-            $outputsSectionStartIndex = 0
-            while ($readMeContent[$outputsSectionStartIndex] -notlike '*# Outputs' -and -not ($outputsSectionStartIndex -ge $readMeContent.count)) {
-                $outputsSectionStartIndex++
-            }
+#             # Get ReadMe data
+#             $outputsSectionStartIndex = 0
+#             while ($readMeContent[$outputsSectionStartIndex] -notlike '*# Outputs' -and -not ($outputsSectionStartIndex -ge $readMeContent.count)) {
+#                 $outputsSectionStartIndex++
+#             }
 
-            $outputsTableStartIndex = $outputsSectionStartIndex + 1
-            while ($readMeContent[$outputsTableStartIndex] -notlike '*|*' -and -not ($outputsTableStartIndex -ge $readMeContent.count)) {
-                $outputsTableStartIndex++
-            }
+#             $outputsTableStartIndex = $outputsSectionStartIndex + 1
+#             while ($readMeContent[$outputsTableStartIndex] -notlike '*|*' -and -not ($outputsTableStartIndex -ge $readMeContent.count)) {
+#                 $outputsTableStartIndex++
+#             }
 
-            $outputsTableHeader = $readMeContent[$outputsTableStartIndex].Split('|').Trim() | Where-Object { -not [String]::IsNullOrEmpty($_) }
+#             $outputsTableHeader = $readMeContent[$outputsTableStartIndex].Split('|').Trim() | Where-Object { -not [String]::IsNullOrEmpty($_) }
 
-            # Test
-            $expectedOutputsTableOrder = @('Output Name', 'Type')
-            $differentiatingItems = $expectedOutputsTableOrder | Where-Object { $outputsTableHeader -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ('list of "Outputs" table columns missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
-        }
+#             # Test
+#             $expectedOutputsTableOrder = @('Output Name', 'Type')
+#             $differentiatingItems = $expectedOutputsTableOrder | Where-Object { $outputsTableHeader -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ('list of "Outputs" table columns missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
+#         }
 
-        It '[<moduleFolderName>] Output section should contain all outputs defined in the template file' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $templateContent,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] Output section should contain all outputs defined in the template file' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $templateContent,
+#                 $readMeContent
+#             )
 
-            # Get ReadMe data
-            $outputsSectionStartIndex = 0
-            while ($readMeContent[$outputsSectionStartIndex] -notlike '*# Outputs' -and -not ($outputsSectionStartIndex -ge $readMeContent.count)) {
-                $outputsSectionStartIndex++
-            }
+#             # Get ReadMe data
+#             $outputsSectionStartIndex = 0
+#             while ($readMeContent[$outputsSectionStartIndex] -notlike '*# Outputs' -and -not ($outputsSectionStartIndex -ge $readMeContent.count)) {
+#                 $outputsSectionStartIndex++
+#             }
 
-            $outputsTableStartIndex = $outputsSectionStartIndex + 1
-            while ($readMeContent[$outputsTableStartIndex] -notlike '*|*' -and -not ($outputsTableStartIndex -ge $readMeContent.count)) {
-                $outputsTableStartIndex++
-            }
+#             $outputsTableStartIndex = $outputsSectionStartIndex + 1
+#             while ($readMeContent[$outputsTableStartIndex] -notlike '*|*' -and -not ($outputsTableStartIndex -ge $readMeContent.count)) {
+#                 $outputsTableStartIndex++
+#             }
 
-            $outputsTableEndIndex = $outputsTableStartIndex + 2
-            while ($readMeContent[$outputsTableEndIndex] -like '|*' -and -not ($outputsTableEndIndex -ge $readMeContent.count)) {
-                $outputsTableEndIndex++
-            }
+#             $outputsTableEndIndex = $outputsTableStartIndex + 2
+#             while ($readMeContent[$outputsTableEndIndex] -like '|*' -and -not ($outputsTableEndIndex -ge $readMeContent.count)) {
+#                 $outputsTableEndIndex++
+#             }
 
-            $ReadMeoutputsList = [System.Collections.ArrayList]@()
-            for ($index = $outputsTableStartIndex + 2; $index -lt $outputsTableEndIndex; $index++) {
-                $ReadMeoutputsList += $readMeContent[$index].Split('|')[1].Replace('`', '').Trim()
-            }
+#             $ReadMeoutputsList = [System.Collections.ArrayList]@()
+#             for ($index = $outputsTableStartIndex + 2; $index -lt $outputsTableEndIndex; $index++) {
+#                 $ReadMeoutputsList += $readMeContent[$index].Split('|')[1].Replace('`', '').Trim()
+#             }
 
-            # Template data
-            $expectedOutputs = $templateContent.outputs.Keys
+#             # Template data
+#             $expectedOutputs = $templateContent.outputs.Keys
 
-            # Test
-            $differentiatingItems = $expectedOutputs | Where-Object { $ReadMeoutputsList -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ('list of template outputs missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
+#             # Test
+#             $differentiatingItems = $expectedOutputs | Where-Object { $ReadMeoutputsList -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ('list of template outputs missing in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
 
-            $differentiatingItems = $ReadMeoutputsList | Where-Object { $expectedOutputs -notcontains $_ }
-            $differentiatingItems.Count | Should -Be 0 -Because ('list of excess template outputs defined in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
-        }
+#             $differentiatingItems = $ReadMeoutputsList | Where-Object { $expectedOutputs -notcontains $_ }
+#             $differentiatingItems.Count | Should -Be 0 -Because ('list of excess template outputs defined in the ReadMe file [{0}] should be empty' -f ($differentiatingItems -join ','))
+#         }
 
-        It '[<moduleFolderName>] Template References section should contain at least one bullet point with a reference' -TestCases $readmeFolderTestCases {
-            param(
-                $moduleFolderName,
-                $readMeContent
-            )
+#         It '[<moduleFolderName>] Template References section should contain at least one bullet point with a reference' -TestCases $readmeFolderTestCases {
+#             param(
+#                 $moduleFolderName,
+#                 $readMeContent
+#             )
 
-            $ReadmeHTML = ($readMeContent | ConvertFrom-Markdown -ErrorAction SilentlyContinue).Html
-            $Headings = @(@())
-            foreach ($H in $ReadmeHTML) {
-                if ($H.Contains('<h')) {
-                    $StartingIndex = $H.IndexOf('>') + 1
-                    $EndIndex = $H.LastIndexof('<')
-                    $Headings += , (@($H.Substring($StartingIndex, $EndIndex - $StartingIndex), $ReadmeHTML.IndexOf($H)))
-                }
-            }
-            $HeadingIndex = $Headings | Where-Object { $_ -eq 'Template References' }
-            if ($HeadingIndex -eq $null) {
-                Write-Verbose "[Template References should contain at least one bullet point with a reference] Error At ($moduleFolderName)" -Verbose
-                $true | Should -Be $false
-            }
-            $StartIndex = $HeadingIndex[1] + 2
-            ($ReadmeHTML[$StartIndex].Contains('<li>')) | Should -Be $true
-            ($ReadmeHTML[$StartIndex].Contains('href')) | Should -Be $true
-        }
+#             $ReadmeHTML = ($readMeContent | ConvertFrom-Markdown -ErrorAction SilentlyContinue).Html
+#             $Headings = @(@())
+#             foreach ($H in $ReadmeHTML) {
+#                 if ($H.Contains('<h')) {
+#                     $StartingIndex = $H.IndexOf('>') + 1
+#                     $EndIndex = $H.LastIndexof('<')
+#                     $Headings += , (@($H.Substring($StartingIndex, $EndIndex - $StartingIndex), $ReadmeHTML.IndexOf($H)))
+#                 }
+#             }
+#             $HeadingIndex = $Headings | Where-Object { $_ -eq 'Template References' }
+#             if ($HeadingIndex -eq $null) {
+#                 Write-Verbose "[Template References should contain at least one bullet point with a reference] Error At ($moduleFolderName)" -Verbose
+#                 $true | Should -Be $false
+#             }
+#             $StartIndex = $HeadingIndex[1] + 2
+#             ($ReadmeHTML[$StartIndex].Contains('<li>')) | Should -Be $true
+#             ($ReadmeHTML[$StartIndex].Contains('href')) | Should -Be $true
+#         }
 
-    }
-}
+#     }
+# }
 
 Describe 'Deployment template tests' -Tag Template {
 
