@@ -61,7 +61,7 @@ var identity_var = identity == 'SystemAssigned' ? {
 } : null
 
 resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (enableDefaultTelemetry) {
-  name: 'pid-47ed15a6-730a-4827-bcb4-0fd963ffbd82-${uniqueString(deployment().name, location)}'
+  name: 'pid-7386cd39-b109-4cc6-bb80-bf12413d0a99-${uniqueString(deployment().name, location)}'
   location: location
   properties: {
     mode: 'Incremental'

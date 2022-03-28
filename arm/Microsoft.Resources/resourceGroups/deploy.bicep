@@ -24,7 +24,7 @@ param tags object = {}
 param enableDefaultTelemetry bool = true
 
 resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (enableDefaultTelemetry) {
-  name: 'pid-47ed15a6-730a-4827-bcb4-0fd963ffbd82-${uniqueString(deployment().name, location)}'
+  name: 'pid-7386cd39-b109-4cc6-bb80-bf12413d0a99-${uniqueString(deployment().name, location)}'
   location: location
   properties: {
     mode: 'Incremental'
@@ -43,26 +43,26 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2019-05-01' = {
   properties: {}
 }
 
-module resourceGroup_lock '.bicep/nested_lock.bicep' = if (lock != 'NotSpecified') {
-  scope: resourceGroup
-  name: '${uniqueString(deployment().name, location)}-RG-${lock}-Lock'
-  params: {
-    name: '${resourceGroup.name}-${lock}-lock'
-    level: lock
-  }
-}
+// module resourceGroup_lock '.bicep/nested_lock.bicep' = if (lock != 'NotSpecified') {
+//   scope: resourceGroup
+//   name: '${uniqueString(deployment().name, location)}-RG-${lock}-Lock'
+//   params: {
+//     name: '${resourceGroup.name}-${lock}-lock'
+//     level: lock
+//   }
+// }
 
-module resourceGroup_rbac '.bicep/nested_rbac.bicep' = [for (roleAssignment, index) in roleAssignments: {
-  name: '${uniqueString(deployment().name, location)}-RG-Rbac-${index}'
-  params: {
-    description: contains(roleAssignment, 'description') ? roleAssignment.description : ''
-    principalIds: roleAssignment.principalIds
-    principalType: contains(roleAssignment, 'principalType') ? roleAssignment.principalType : ''
-    roleDefinitionIdOrName: roleAssignment.roleDefinitionIdOrName
-    resourceId: resourceGroup.id
-  }
-  scope: resourceGroup
-}]
+// module resourceGroup_rbac '.bicep/nested_rbac.bicep' = [for (roleAssignment, index) in roleAssignments: {
+//   name: '${uniqueString(deployment().name, location)}-RG-Rbac-${index}'
+//   params: {
+//     description: contains(roleAssignment, 'description') ? roleAssignment.description : ''
+//     principalIds: roleAssignment.principalIds
+//     principalType: contains(roleAssignment, 'principalType') ? roleAssignment.principalType : ''
+//     roleDefinitionIdOrName: roleAssignment.roleDefinitionIdOrName
+//     resourceId: resourceGroup.id
+//   }
+//   scope: resourceGroup
+// }]
 
 @description('The name of the resource group')
 output name string = resourceGroup.name
