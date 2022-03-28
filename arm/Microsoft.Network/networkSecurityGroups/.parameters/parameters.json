@@ -58,14 +58,10 @@
                         "priority": 102,
                         "direction": "Inbound",
                         "sourceApplicationSecurityGroups": [
-                            {
-                                "id": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/applicationSecurityGroups/adp-bicepdemo-uat-az-asg-x-001"
-                            }
+                            
                         ],
                         "destinationApplicationSecurityGroups": [
-                            {
-                                "id": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/applicationSecurityGroups/adp-bicepdemo-uat-az-asg-x-001"
-                            }
+                            
                         ]
                     }
                 }
