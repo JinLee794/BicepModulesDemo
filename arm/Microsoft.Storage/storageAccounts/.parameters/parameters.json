@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "bicepdemo-uatazsax001"
+            "value": "bicepdemouatazsax001"
         },
         "storageAccountSku": {
             "value": "Standard_LRS"
