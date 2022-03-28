@@ -35,7 +35,7 @@ param conditionVersion string = '2.0'
   'ForeignGroup'
   'Device'
 ])
-param principalType string
+param principalType string = 'ServicePrincipal'
 
 @sys.description('Optional. Enable telemetry via the Customer Usage Attribution ID (GUID).')
 param enableDefaultTelemetry bool = true

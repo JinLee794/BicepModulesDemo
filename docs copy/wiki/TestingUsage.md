@@ -100,7 +100,9 @@ The following scenarios are common to when to use a token value in the parameter
             "value": [
                 {
                     "roleDefinitionIdOrName": "Reader",
+                    "principalType": "ServicePrincipal",
                     "principalIds": [
+
                         "<<deploymentSpId>>" //Default Token
                     ]
                 }

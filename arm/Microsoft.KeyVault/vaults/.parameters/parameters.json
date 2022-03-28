@@ -31,7 +31,9 @@
             "value": [
                 {
                     "roleDefinitionIdOrName": "Reader",
+                    "principalType": "ServicePrincipal",
                     "principalIds": [
+
                         "<<deploymentSpId>>"
                     ]
                 }
@@ -49,7 +51,9 @@
                         "roleAssignments": [
                             {
                                 "roleDefinitionIdOrName": "Reader",
+                                "principalType": "ServicePrincipal",
                                 "principalIds": [
+
                                     "<<deploymentSpId>>"
                                 ]
                             }
@@ -67,7 +71,9 @@
                     "roleAssignments": [
                         {
                             "roleDefinitionIdOrName": "Reader",
+                            "principalType": "ServicePrincipal",
                             "principalIds": [
+
                                 "<<deploymentSpId>>"
                             ]
                         }

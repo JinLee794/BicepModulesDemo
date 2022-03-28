@@ -15,7 +15,7 @@ param resourceId string
   'ForeignGroup'
   'Device'
 ])
-param principalType string
+param principalType string = 'ServicePrincipal'
 
 @sys.description('Optional. Description of role assignment')
 param description string = ''

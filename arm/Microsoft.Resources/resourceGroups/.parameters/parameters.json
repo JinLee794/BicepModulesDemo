@@ -14,7 +14,9 @@
             "value": [
                 {
                     "roleDefinitionIdOrName": "Reader",
+                    "principalType": "ServicePrincipal",
                     "principalIds": [
+
                         "<<deploymentSpId>>"
                     ],
                     "principalType": "ServicePrincipal"
