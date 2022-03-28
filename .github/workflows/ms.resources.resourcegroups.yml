@@ -98,7 +98,8 @@ jobs:
           parameterFilePath: '${{ env.modulePath }}/.parameters/${{ matrix.parameterFilePaths }}'
           location: '${{ env.defaultLocation }}'
           resourceGroupName: '${{ env.resourceGroupName }}'
-          subscriptionId: '${{ secrets.ARM_SUBSCRIPTION_ID }}'
+          # subscriptionId: '${{ secrets.ARM_SUBSCRIPTION_ID }}'
+          subscriptionId: '7386cd39-b109-4cc6-bb80-bf12413d0a99'
           managementGroupId: '${{ secrets.ARM_MGMTGROUP_ID }}'
           removeDeployment: '${{ needs.job_set_workflow_param.outputs.removeDeployment }}'
 
