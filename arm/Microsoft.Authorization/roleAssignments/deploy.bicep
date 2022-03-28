@@ -1,4 +1,4 @@
-targetScope = 'managementGroup'
+targetScope = 'subscription'
 
 @sys.description('Required. You can provide either the display name of the role definition, or its fully qualified ID in the following format: \'/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11\'')
 param roleDefinitionIdOrName string
@@ -11,9 +11,6 @@ param resourceGroupName string = ''
 
 @sys.description('Optional. Subscription ID of the subscription to assign the RBAC role to. If no Resource Group name is provided, the module deploys at subscription level, therefore assigns the provided RBAC role to the subscription.')
 param subscriptionId string = ''
-
-@sys.description('Optional. Group ID of the Management Group to assign the RBAC role to. If not provided, will use the current scope for deployment.')
-param managementGroupId string = managementGroup().name
 
 @sys.description('Optional. Location deployment metadata.')
 param location string = deployment().location
@@ -59,21 +56,6 @@ resource defaultTelemetry 'Microsoft.Resources/deployments@2021-04-01' = if (ena
   }
 }
 
-module roleAssignment_mg 'managementGroup/deploy.bicep' = if (empty(subscriptionId) && empty(resourceGroupName)) {
-  name: '${uniqueString(deployment().name, location)}-RoleAssignment-MG-Module'
-  scope: managementGroup(managementGroupId)
-  params: {
-    roleDefinitionIdOrName: roleDefinitionIdOrName
-    principalId: principalId
-    managementGroupId: managementGroupId
-    description: !empty(description) ? description : ''
-    principalType: principalType
-    delegatedManagedIdentityResourceId: !empty(delegatedManagedIdentityResourceId) ? delegatedManagedIdentityResourceId : ''
-    conditionVersion: conditionVersion
-    condition: !empty(condition) ? condition : ''
-    location: location
-  }
-}
 
 module roleAssignment_sub 'subscription/deploy.bicep' = if (!empty(subscriptionId) && empty(resourceGroupName)) {
   name: '${uniqueString(deployment().name, location)}-RoleAssignment-Sub-Module'
