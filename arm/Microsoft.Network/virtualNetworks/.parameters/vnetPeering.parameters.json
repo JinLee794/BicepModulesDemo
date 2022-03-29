@@ -35,7 +35,7 @@
             "value": ""
         },
         "diagnosticEventHubName": {
-            "value": "adp-<<namePrefix>>-uat-az-evh-x-001"
+            "value": ""
         }
     }
 }
