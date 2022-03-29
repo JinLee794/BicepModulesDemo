@@ -2,6 +2,15 @@
 
 This module deploys Role Assignments across the management group, subscription or resource group scope.
 
+## Navigation
+
+- [Resource types](#Resource-types)
+- [Parameters](#Parameters)
+- [Module Usage Guidance](#Module-Usage-Guidance)
+- [Outputs](#Outputs)
+- [Considerations](#Considerations)
+- [Template references](#Template-references)
+
 ## Resource types
 
 | Resource Type | API Version |
