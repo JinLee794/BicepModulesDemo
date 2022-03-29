@@ -5,6 +5,9 @@
         "name": {
             "value": "<<namePrefix>>uatazsax001"
         },
+        "location": {
+            "value": "eastus"
+        },
         "storageAccountSku": {
             "value": "Standard_LRS"
         },
@@ -16,6 +19,9 @@
         },
         "requireInfrastructureEncryption": {
             "value": true
+        },
+        "storageAccountAccessTier": {
+            "value": "Hot"
         },
         "privateEndpoints": {
             "value": [
