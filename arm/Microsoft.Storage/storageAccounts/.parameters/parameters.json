@@ -54,10 +54,10 @@
         "blobServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "",
+                "diagnosticWorkspaceId": "",
+                "diagnosticEventHubAuthorizationRuleId": "",
+                "diagnosticEventHubName": "",
                 "containers": [
                     {
                         "name": "avdscripts",
@@ -67,7 +67,6 @@
                                 "roleDefinitionIdOrName": "Reader",
                                 "principalType": "ServicePrincipal",
                                 "principalIds": [
-
                                     "<<deploymentSpId>>"
                                 ]
                             }
@@ -86,10 +85,10 @@
         "fileServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "",
+                "diagnosticWorkspaceId": "",
+                "diagnosticEventHubAuthorizationRuleId": "",
+                "diagnosticEventHubName": "",
                 "shares": [
                     {
                         "name": "avdprofiles",
@@ -99,7 +98,6 @@
                                 "roleDefinitionIdOrName": "Reader",
                                 "principalType": "ServicePrincipal",
                                 "principalIds": [
-
                                     "<<deploymentSpId>>"
                                 ]
                             }
@@ -115,10 +113,10 @@
         "tableServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "",
+                "diagnosticWorkspaceId": "",
+                "diagnosticEventHubAuthorizationRuleId": "",
+                "diagnosticEventHubName": "",
                 "tables": [
                     "table1",
                     "table2"
@@ -128,10 +126,10 @@
         "queueServices": {
             "value": {
                 "diagnosticLogsRetentionInDays": 7,
-                "diagnosticStorageAccountId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001",
-                "diagnosticWorkspaceId": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001",
-                "diagnosticEventHubAuthorizationRuleId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey",
-                "diagnosticEventHubName": "adp-<<namePrefix>>-uat-az-evh-x-001",
+                "diagnosticStorageAccountId": "",
+                "diagnosticWorkspaceId": "",
+                "diagnosticEventHubAuthorizationRuleId": "",
+                "diagnosticEventHubName": "",
                 "queues": [
                     {
                         "name": "queue1",
@@ -141,7 +139,6 @@
                                 "roleDefinitionIdOrName": "Reader",
                                 "principalType": "ServicePrincipal",
                                 "principalIds": [
-
                                     "<<deploymentSpId>>"
                                 ]
                             }
@@ -178,16 +175,16 @@
             "value": 7
         },
         "diagnosticStorageAccountId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001"
+            "value": ""
         },
         "diagnosticWorkspaceId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001"
+            "value": ""
         },
         "diagnosticEventHubAuthorizationRuleId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey"
+            "value": ""
         },
         "diagnosticEventHubName": {
-            "value": "adp-<<namePrefix>>-uat-az-evh-x-001"
+            "value": ""
         }
     }
 }
