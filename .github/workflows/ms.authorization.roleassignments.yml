@@ -83,8 +83,6 @@ jobs:
       matrix:
         parameterFilePaths:
           [
-            'mg.parameters.json',
-            'mg.min.parameters.json',
             'sub.parameters.json',
             'sub.min.parameters.json',
             'rg.parameters.json',
