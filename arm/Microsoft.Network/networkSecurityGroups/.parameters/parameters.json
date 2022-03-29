@@ -64,16 +64,16 @@
             "value": 7
         },
         "diagnosticStorageAccountId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Storage/storageAccounts/adp<<namePrefix>>-uatazsax001"
+            "value": ""
         },
         "diagnosticWorkspaceId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/microsoft.operationalinsights/workspaces/adp-<<namePrefix>>-uat-az-law-x-001"
+            "value": ""
         },
         "diagnosticEventHubAuthorizationRuleId": {
-            "value": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.EventHub/namespaces/adp-<<namePrefix>>-uat-az-evhns-x-001/AuthorizationRules/RootManageSharedAccessKey"
+            "value": ""
         },
         "diagnosticEventHubName": {
-            "value": "adp-<<namePrefix>>-uat-az-evh-x-001"
+            "value": ""
         }
     }
 }
