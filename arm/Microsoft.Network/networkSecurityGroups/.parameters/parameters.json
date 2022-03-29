@@ -46,24 +46,6 @@
                             "10.3.0.0/16"
                         ]
                     }
-                },
-                {
-                    "name": "Port_8082",
-                    "properties": {
-                        "description": "Allow inbound access on TCP 8082",
-                        "protocol": "*",
-                        "sourcePortRange": "*",
-                        "destinationPortRange": "8082",
-                        "access": "Allow",
-                        "priority": 102,
-                        "direction": "Inbound",
-                        "sourceApplicationSecurityGroups": [
-                            
-                        ],
-                        "destinationApplicationSecurityGroups": [
-                            
-                        ]
-                    }
                 }
             ]
         },
