@@ -423,20 +423,20 @@ Describe 'Deployment template tests' -Tag Template {
             $IncorrectParameters | Should -BeNullOrEmpty
         }
 
-        # PARAMETER Tests
-        It '[<moduleFolderName>] All parameters in parameters files exist in template file (deploy.json)' -TestCases $deploymentFolderTestCases {
-            param (
-                [hashtable[]] $parameterFileTestCases
-            )
+        # # PARAMETER Tests
+        # It '[<moduleFolderName>] All parameters in parameters files exist in template file (deploy.json)' -TestCases $deploymentFolderTestCases {
+        #     param (
+        #         [hashtable[]] $parameterFileTestCases
+        #     )
 
-            foreach ($parameterFileTestCase in $parameterFileTestCases) {
-                $parameterFile_AllParameterNames = $parameterFileTestCase.parameterFile_AllParameterNames
-                $templateFile_AllParameterNames = $parameterFileTestCase.templateFile_AllParameterNames
+        #     foreach ($parameterFileTestCase in $parameterFileTestCases) {
+        #         $parameterFile_AllParameterNames = $parameterFileTestCase.parameterFile_AllParameterNames
+        #         $templateFile_AllParameterNames = $parameterFileTestCase.templateFile_AllParameterNames
 
-                $nonExistentParameters = $parameterFile_AllParameterNames | Where-Object { $templateFile_AllParameterNames -notcontains $_ }
-                $nonExistentParameters.Count | Should -Be 0 -Because ('no parameter in the parameter file should not exist in the template file. Found excess items: [{0}]' -f ($nonExistentParameters -join ', '))
-            }
-        }
+        #         $nonExistentParameters = $parameterFile_AllParameterNames | Where-Object { $templateFile_AllParameterNames -notcontains $_ }
+        #         $nonExistentParameters.Count | Should -Be 0 -Because ('no parameter in the parameter file should not exist in the template file. Found excess items: [{0}]' -f ($nonExistentParameters -join ', '))
+        #     }
+        # }
 
         It '[<moduleFolderName>] All required parameters in template file (deploy.json) should exist in parameters files' -TestCases $deploymentFolderTestCases {
             param (
