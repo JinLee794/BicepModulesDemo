@@ -25,22 +25,7 @@
         },
         "privateEndpoints": {
             "value": [
-                {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
-                    "service": "blob"
-                },
-                {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
-                    "service": "table"
-                },
-                {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
-                    "service": "queue"
-                },
-                {
-                    "subnetResourceId": "/subscriptions/<<subscriptionId>>/resourceGroups/validation-rg/providers/Microsoft.Network/virtualNetworks/adp-<<namePrefix>>-uat-az-vnet-x-001/subnets/<<namePrefix>>-uat-az-subnet-x-005-privateEndpoints",
-                    "service": "file"
-                }
+
             ]
         },
         "networkAcls": {
@@ -156,7 +141,6 @@
         },
         "userAssignedIdentities": {
             "value": {
-                "/subscriptions/<<subscriptionId>>/resourcegroups/validation-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/adp-<<namePrefix>>-uat-az-msi-x-001": {}
             }
         },
         "roleAssignments": {
@@ -165,7 +149,6 @@
                     "roleDefinitionIdOrName": "Reader",
                     "principalType": "ServicePrincipal",
                     "principalIds": [
-
                         "<<deploymentSpId>>"
                     ]
                 }
