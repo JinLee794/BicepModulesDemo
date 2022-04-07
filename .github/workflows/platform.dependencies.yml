@@ -14,13 +14,13 @@ on:
         required: false
         default: false
 
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - '.github/actions/templates/validateModuleDeployment/**'
-  #     - '.github/workflows/platform.dependencies.yml'
-  #     - 'utilities/pipelines/dependencies/**'
+  push:
+    branches:
+      - develop
+    paths:
+      - '.github/actions/templates/validateModuleDeployment/**'
+      - '.github/workflows/platform.dependencies.yml'
+      - 'utilities/pipelines/dependencies/**'
 
 env:
   location: 'eastus'

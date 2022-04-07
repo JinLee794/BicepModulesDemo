@@ -3,7 +3,7 @@ name: '.Platform: Test - ConvertTo-ARMTemplate.ps1'
 on:
   push:
     branches:
-      - main
+      - develop
     paths:
       - 'utilities/tools/ConvertTo-ARMTemplate.ps1'
       - 'utilities/tools/tests/ConvertTo-ARMTemplate**'
