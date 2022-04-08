@@ -1,14 +1,5 @@
 # Git Flow
 
-## Relevant Links
-
-[Gitflow Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-
-[Creating a branch to work on an issue - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue)
-
-[Linking a pull request to an issue - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
-
-[About code owners - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
 
 ## Proof-of-concept
 
@@ -68,3 +59,14 @@
         - i.e `support/1.x`
     - `support/<major>.<minor>.x` or `support/<major>.<minor>.0`
         - i.e `support/1.3.x` or `support/1.3.0`
+
+
+# Additional Reading
+
+[Gitflow Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+[Creating a branch to work on an issue - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue)
+
+[Linking a pull request to an issue - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
+
+[About code owners - GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
