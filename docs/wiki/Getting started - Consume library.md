@@ -16,7 +16,7 @@ To download a specific release version of the repository:
 1. Scroll to the `'Assets'` section at the bottom end of the release you'd like to download
 1. Here you will find a packaged version of the repository (as it was when the release was created) and can download it with a simple click on the `'Source code'` package (e.g. `Source code (zip)`) itself. This will start the download and drop the file in your default download folder.
 
-    <img src="./media/SetupEnvironment/downloadZipRelease.png" alt="Download zip" height="150">
+    <img src=media/SetupEnvironment/downloadZipRelease.png" alt="Download zip" height="150">
 
 1. Finally, you only need to unpack the downloaded file to a location of your choice
 
@@ -29,7 +29,7 @@ To download the latest version of the repository
 1. Navigate to the main page of [CARML](https://aka.ms/CARML)
 1. On the overview page, select the `<> Code` button to the top right, and select the `Download ZIP` button in the opening pop up to trigger the repository to be downloaded as a compressed file into your default download folder.
 
-    <img src="./media/SetupEnvironment/downloadZipLatest.png" alt="Download zip" height="350">
+    <img src=media/SetupEnvironment/downloadZipLatest.png" alt="Download zip" height="350">
 
 1. Finally, you only need to unpack the downloaded file to a location of your choice
 

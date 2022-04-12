@@ -7,6 +7,9 @@ This wiki describes the content of this repository, the modules, pipelines, poss
 If you're unfamiliar with Infrastructure as Code, or wonder how you can use the contents of this repository in your deployments please check out the [context](./Context) section of this wiki.
 
 ---
+
+## _Navigation_
+
 - [The context](./The%20context)
   - [Infrastructure as Code](./The%20context%20-%20IaC)
   - [CARML overview](./The%20context%20-%20CARML%20overview)

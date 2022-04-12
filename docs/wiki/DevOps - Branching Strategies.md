@@ -38,7 +38,7 @@ This branching strategy consists of the following branches:
 
 The main and develop branches are considered to be the main branches, with an infinite lifetime, while the rest are supporting branches that are meant to aid parallel development among developers, usually short-lived.
 
-![git-flow-branching-model](../media/gitflow-branching-strategy.png)
+![git-flow-branching-model](media/gitflow-branching-strategy.png)
 
 ### Git Flow Pros and Cons
 
@@ -80,7 +80,7 @@ Furthermore, the lack of development branches makes this strategy more susceptib
 
 A further disadvantage is as this model is more suited to small teams and hence, as teams grow merge conflicts can occur as everyone is merging to the same branch and there is a lack of transparency meaning developers cannot see what other developers are working on.
 
-![github-flow-branching-model](../media/github-flow-branching-model.jpeg)
+![github-flow-branching-model](media/github-flow-branching-model.jpeg)
 
 ## GitLab Flow
 
@@ -94,7 +94,7 @@ Thus, this strategy offers propers isolation between environments allowing devel
 
 While GitHub Flow assumes that you can deploy into production whenever you merge a feature branch into the master, GitLab Flow seeks to resolve that issue by allowing the code to pass through internal environments before it reaches production, as seen in the image below.
 
-![gitlab_flow_environment_branches](../media/gitlab_flow_environment_branches.png)
+![gitlab_flow_environment_branches](media/gitlab_flow_environment_branches.png)
 
 Therefore, this method is suited for situations where you don’t control the timing of the release, such as an iOS app that needs to go through the App store validation first or when you have specific deployment windows.
 
@@ -108,7 +108,7 @@ Consequently, trunk-based development is a key enabler of continuous integration
 
 This strategy is often combined with feature flags. As the trunk is always kept ready for release, feature flags help decouple deployment from release so any changes that are not ready can be wrapped in a feature flag and kept hidden while features that are complete can be released to end-users without delay.
 
-![trunk_based_development](../media/trunk-based-development-branching-strategy.png)
+![trunk_based_development](media/trunk-based-development-branching-strategy.png)
 
 ### Trunk-based Development Pros and Cons
 

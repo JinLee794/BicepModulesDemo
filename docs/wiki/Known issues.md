@@ -4,7 +4,7 @@ This section provides an overview of the most impactful limitations and known is
 
 ---
 
-### _Navigation_
+## _Navigation_
 
 - [Module specific](#module-specific)
 - [CI environment specific](#ci-environment-specific)

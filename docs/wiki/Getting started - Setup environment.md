@@ -64,11 +64,11 @@ from a command-line of your choice (e.g. PowerShell).
 
 If you instead just want to have a copy of the repository's content you can instead download it in the `.zip` format. You can do this by navigating to the repository folder of your choice (for example root), then select the `<> Code` button on the top left and click on `Download ZIP` on the opening blade.
 
- <img src="./media/cloneDownloadRepo.JPG" alt="How to download repository" height="266">
+ <img src=media/cloneDownloadRepo.JPG" alt="How to download repository" height="266">
 
 Alternatively, you can also do the same with a specific release by navigating to the [releases](https://github.com/Azure/BicepModulesDemo/releases) page, scroll to the `'Assets'` section at the bottom end of the release you'd like to get and download the packaged release (as it was when the release was created) with a simple click on the `'Source code'` package (e.g. `Source code (zip)`) itself.
 
-  <img src="./media/SetupEnvironment/downloadZipRelease.png" alt="Download zip" height="150">
+  <img src=media/SetupEnvironment/downloadZipRelease.png" alt="Download zip" height="150">
 
 </details>
 
@@ -138,15 +138,15 @@ To use the environment's pipelines you should use the information you gathered d
 
 1. Navigate to the repository's `Settings`.
 
-    <img src="./media/SetupEnvironment/forkSettings.png" alt="Navigate to settings" height="100">
+    <img src=media/SetupEnvironment/forkSettings.png" alt="Navigate to settings" height="100">
 
 1. In the list of settings, expand `Secrets` and select `Actions`. You can create a new repository secret by selecting `New repository secret` on the top right.
 
-    <img src="./media/SetupEnvironment/forkSettingsSecrets.png" alt="Navigate to secrets" height="600">
+    <img src=media/SetupEnvironment/forkSettingsSecrets.png" alt="Navigate to secrets" height="600">
 
 1. In the opening view, you can create a secret by providing a secret `Name`, a secret `Value`, followed by a click on the `Add secret` button.
 
-    <img src="./media/SetupEnvironment/forkSettingsSecretAdd.png" alt="Add secret" height="600">
+    <img src=media/SetupEnvironment/forkSettingsSecretAdd.png" alt="Add secret" height="600">
 
 </details>
 
@@ -214,7 +214,7 @@ To do so, perform the following steps:
 
 1. Next, select '`I understand my workflows, go ahead and enable them`'.
 
-    <img src="./media/SetupEnvironment/actionsEnable.png" alt="Enable Actions" height="380">
+    <img src=media/SetupEnvironment/actionsEnable.png" alt="Enable Actions" height="380">
 
 </details>
 

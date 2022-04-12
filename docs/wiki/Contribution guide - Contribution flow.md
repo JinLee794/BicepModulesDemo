@@ -21,7 +21,7 @@ How you proceed from here depends on the scenario:
 
 - If you just want to contribute to this project, but don't know yet where and how, feel free to navigate the the 'Projects' tab on the repository, check what items are currently still in the 'to-do' swim lane and pick one that speaks to you. In this case you should assign the item to yourself / or reach out to discuss its content & priority.
 
-   <img src="./media/projectsTab.jpg" alt="Projects Tab" height="178" width="414">
+   <img src=media/projectsTab.jpg" alt="Projects Tab" height="178" width="414">
 
   > Note: For starters we suggest to search for issues labelled with `good first issue`.
 
@@ -71,10 +71,10 @@ Finally, once your contribution is implemented and validated, open a PR for CARM
 - Reference the issue number as per the [Create or pick up an issue](#Create-or-pick-up-an-issue) step.
 - If applicable, please reference the badge status of your pipeline run. This badge will show the reviewer that the code changes were successfully validated & tested in your environment. To create a badge, first select the three dots (`...`) to the top right of the pipeline, and further the `Create status badge` option.
 
-    <img src="./media/badgeDropdown.png" alt="Badge dropdown" height="200">
+    <img src=media/badgeDropdown.png" alt="Badge dropdown" height="200">
 
   In the opening pop up, you first need to select your branch and then click on the `Copy status badge Markdown`
 
-    <img src="./media/carmlStatusBadge.png" alt="Status badge" height="400">
+    <img src=media/carmlStatusBadge.png" alt="Status badge" height="400">
 
 

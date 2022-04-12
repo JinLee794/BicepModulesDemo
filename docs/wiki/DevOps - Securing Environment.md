@@ -38,7 +38,7 @@ GitHub DevSecOps installations cover many security scenarios. Possibilities incl
 - Streamlined organizations that need systems to automatically acquire new, uncompromised security devices when secrets are left exposed in code.
 - Development teams that could benefit from automatic upgrades when newer or more secure versions of external packages become available.
 
-![devSecOps](../media/devsecops-in-github.svg)
+![devSecOps](media/devsecops-in-github.svg)
 
 1. When developers access GitHub resources, GitHub redirects them to Azure Active Directory (Azure AD) for SAML authentication. In a single sign-on (SSO) procedure, the [Microsoft Authenticator app](https://docs.microsoft.com/en-us/azure/active-directory/user-help/user-help-auth-app-overview) then uses FIDO2 strong authentication. The passwordless [FIDO2 security keys](https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-authentication-passwordless#fido2-security-keys) align with the latest [Fast Identity Online (FIDO) Alliance](https://fidoalliance.org/) specifications.
 2. Developers begin working on tasks in Codespaces. Organized into containers, these pre-built development environments provide correctly configured IDEs that are equipped with required security scanning extensions.
@@ -65,7 +65,7 @@ You can add self-hosted runners at various levels in the management hierarchy on
 - Organization-level runners can process jobs for multiple repositories in an organization.
 - Enterprise-level runners can be assigned to multiple organizations in an enterprise account.
 
-![self-hosted-infrastructure](../media/Self-Hosted-Infrastructure.svg "Azure Self Hosted GH Actions")
+![self-hosted-infrastructure](media/Self-Hosted-Infrastructure.svg "Azure Self Hosted GH Actions")
 
 The above chart displays a possible implementation of self-hosted runners within an Azure environment.
 
