@@ -6,13 +6,14 @@ This section gives an overview of security concepts that can be leveraged to sec
 
 ## _Navigation_
 
-- [Branching Strategies](./DevOps%20-%20Branching%20Strategies.md)
-  - [Git Flow](./GitFlow)
-  - [GitHubFlow](./GitHubFlow)
-  - [Trunk Based Development](./TrunkBasedDevelopment)
-- [GitHub Advanced Security](./GitHubAdvancedSecurity.md)
-- [Securing Environment](./DevOps%20-%20Securing%20Environment.md)
-  - [DevSecOps in GitHub](./DevOps%20-%20Securing%20Environment.md#devsecops-in-github)
-  - [Security in Azure Infrastructure](./DevOps%20-%20Securing%20Environment.md#security-in-azure-infrastructure)
+- [Branching Strategies](./DevOps%20-%20Branching%20Strategies)
+  - [Git Flow](./DevOps%20-%20Branching%20Strategies#GitFlow)
+  - [GitHubFlow](./DevOps%20-%20Branching%20Strategies#GitHubFlow)
+  - [GitLab Flow](./DevOps%20-%20Branching%20Strategies#gitlab-flow)
+  - [Trunk Based Development](./DevOps%20-%20Branching%20Strategies#TrunkBasedDevelopment)
+  - [How to choose the best branching strategy for your team](./DevOps%20-%20Branching%20Strategies#how-to-choose-the-best-branching-strategy-for-your-team)
+- [Securing Workflow Environment](./DevOps%20-%20Securing%20Environment)
+  - [DevSecOps in GitHub](./DevOps%20-%20Securing%20Environment#devsecops-in-github)
+  - [Security in Azure Infrastructure](./DevOps%20-%20Securing%20Environment#security-in-azure-infrastructure)
 
 ---
