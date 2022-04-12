@@ -4,8 +4,7 @@
 
 ## _Navigation_
 
-- [Securing Environment](#securing-environment)
-  - [DevSecOps in GitHub](#devsecops-in-github)
+- [DevSecOps in GitHub](#devsecops-in-github)
   - [**Potential use cases**](#--potential-use-cases--)
 - [Security in Azure Infrastructure](#security-in-azure-infrastructure)
   - [Self-Hosted Runners](#self-hosted-runners)
