@@ -1,5 +1,35 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Securing Environment](#securing-environment)
+  - [_Navigation_](#_navigation_)
+  - [GitHub Security](#github-security)
+    - [DevSecOps in GitHub](#devsecops-in-github)
+      - [**Potential use cases**](#potential-use-cases)
+  - [Security in Azure Infrastructure](#security-in-azure-infrastructure)
+    - [Self-Hosted Runners](#self-hosted-runners)
+  - [Further Reading](#further-reading)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Securing Environment
 
+This provides an 
+
+---
+
+## _Navigation_
+
+- [Securing Environment](#securing-environment)
+  - [GitHub Security](#github-security)
+  - [DevSecOps in GitHub](#devsecops-in-github)
+  - [**Potential use cases**](#--potential-use-cases--)
+- [Security in Azure Infrastructure](#security-in-azure-infrastructure)
+  - [Self-Hosted Runners](#self-hosted-runners)
+- [Further Reading](#further-reading)
+
+---
 Main Topics:
 
 1. GitHub Security
@@ -9,18 +39,14 @@ Main Topics:
     1. Managing Access to Self-Hosted Runners using Groups
 2. Security in Azure Infrastructure
 
-# GitHub Security
+## GitHub Security
 
-## Secrets in GitHub
-
-// TODO
-
-## DevSecOps in GitHub
+### DevSecOps in GitHub
 
 [DevSecOps](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/devsecops-in-github)
  adheres to security best practices by adopting a [shift-left](https://devops.com/devops-shift-left-avoid-failure/) strategy that focuses on qualtity and proactive measures to prevent problems instead of relying on detection.
 
-### **Potential use cases**
+#### **Potential use cases**
 
 GitHub DevSecOps installations cover many security scenarios. Possibilities include the following cases:
 
@@ -28,8 +54,6 @@ GitHub DevSecOps installations cover many security scenarios. Possibilities incl
 - Administrators who rely on having up-to-date, prioritized security reports at their fingertips, along with details on affected code and suggested fixes.
 - Streamlined organizations that need systems to automatically acquire new, uncompromised security devices when secrets are left exposed in code.
 - Development teams that could benefit from automatic upgrades when newer or more secure versions of external packages become available.
-
-### Architecture
 
 ![devSecOps](../media/devsecops-in-github.svg)
 
@@ -42,11 +66,11 @@ GitHub DevSecOps installations cover many security scenarios. Possibilities incl
 7. Microsoft Defender for Cloud identifies attacks targeting applications that are running in deployed projects.
 8. Azure Monitor continuously tracks and evaluates app behavior. When threats materialize, this service sends alerts to start the process of rolling code back to previous commits.
 
-# Security in Azure Infrastructure
+## Security in Azure Infrastructure
 
 For elevated control over your workflows, you can leverage [Self-Hosted Runners](#self-hosted-runners) with Azure RBAC to run your workflows within Azure.
 
-## Self-Hosted Runners
+### Self-Hosted Runners
 
 A self-hosted runner is a system that you deploy and manage to execute jobs from GitHub Actions on GitHub.com. For more information about GitHub Actions, see ["Understanding GitHub Actions."](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 
@@ -58,11 +82,9 @@ You can add self-hosted runners at various levels in the management hierarchy on
 - Organization-level runners can process jobs for multiple repositories in an organization.
 - Enterprise-level runners can be assigned to multiple organizations in an enterprise account.
 
-### Architecture
-
-The following chart displays a possible implementation of self-hosted runners within an Azure environment.
 ![self-hosted-infrastructure](../media/Self-Hosted-Infrastructure.svg "Azure Self Hosted GH Actions")
 
+The above chart displays a possible implementation of self-hosted runners within an Azure environment.
 
 - GitHub Actions workflows retrieves secrets from [GitHub Secrets](https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md) to ensure that the workflow targets the appropriate scope (management group, subscription, resource group) for each run.
   - Access to secrets can be managed fully through GitHub, and set at an organization, team, or repo level.
@@ -74,7 +96,7 @@ The following chart displays a possible implementation of self-hosted runners wi
 - The `acrPush` role assigned to the managed identity will grant access to publish new modules into the [Azure Container Registry](https://docs.microsoft.com/en-us/azure/container-registry/#:~:text=Azure%20Container%20Registry%20allows%20you,container%20development%20and%20deployment%20pipelines.)
 - You can make your content within the ACR [publicly available](https://docs.microsoft.com/en-us/azure/container-registry/anonymous-pull-access) for pull operations, or grant selective users/groups/service identities `acrPull` access.
 
-# Further reading
+## Further Reading
 
   [DevSecOps in GitHub - Azure Solution Ideas](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/devsecops-in-github)
 
