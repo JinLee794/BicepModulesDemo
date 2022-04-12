@@ -7,25 +7,25 @@ This wiki describes the content of this repository, the modules, pipelines, poss
 If you're unfamiliar with Infrastructure as Code, or wonder how you can use the contents of this repository in your deployments please check out the [context](./Context) section of this wiki.
 
 ---
-
-## _Navigation_
-
 - [The context](./The%20context)
   - [Infrastructure as Code](./The%20context%20-%20IaC)
   - [CARML overview](./The%20context%20-%20CARML%20overview)
+- [DevOps Security Topics](./DevOps.md)
+  - [Branching Strategies](./DevOps%20-%20Branching%20Strategies.md)
+    - [Git Flow](./DevOps%20-%20Branching%20Strategies#GitFlow)
+    - [GitHubFlow](./DevOps%20-%20Branching%20Strategies#GitHubFlow)
+    - [GitLab Flow](./DevOps%20-%20Branching%20Strategies#gitlab-flow)
+    - [Trunk Based Development](./DevOps%20-%20Branching%20Strategies#TrunkBasedDevelopment)
+    - [How to choose the best branching strategy for your team](./DevOps%20-%20Branching%20Strategies#how-to-choose-the-best-branching-strategy-for-your-team)
+  - [Securing Workflow Environment](./DevOps%20-%20Securing%20Environment.md)
+    - [DevSecOps in GitHub](./DevOps%20-%20Securing%20Environment.md#devsecops-in-github)
+    - [Security in Azure Infrastructure](./DevOps%20-%20Securing%20Environment.md#security-in-azure-infrastructure)
 - [Getting started](./Getting%20started)
-  - [DevOps Security Topics](./SecurityTopics.md)
-    - [Branching Strategies](./BranchingStrategies.md)
-      - [Git Flow](./GitFlow)
-      - [GitHubFlow](./GitHubFlow)
-      - [Trunk Based Development](./TrunkBasedDevelopment)
-    - [GitHub Advanced Security](./GitHubAdvancedSecurity.md)
-    - [Securing Environment](./SecuringEnvironment.md)
-      - [DevSecOps in GitHub](./SecuringEnvironment.md#devsecops-in-github)
-      - [Security in Azure Infrastructure](./SecuringEnvironment.md#security-in-azure-infrastructure)
   - [Setup environment](./Getting%20started%20-%20Setup%20environment)
   - [Consume library](./Getting%20started%20-%20Consume%20library)
   - [Dependency pipeline](./Getting%20started%20-%20Dependency%20pipeline)
+- [Contribution Guide](./Contribution%20guide)
+- [Known Issues](./Known%20Issues)
 
 ---
 

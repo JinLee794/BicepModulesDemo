@@ -1,35 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Modules Design](#modules-design)
-    - [_Navigation_](#_navigation_)
-- [General guidelines](#general-guidelines)
-- [File & folder structure](#file--folder-structure)
-  - [Structure](#structure)
-    - [**Child-Resources**](#child-resources)
-  - [Naming](#naming)
-  - [Patterns](#patterns)
-    - [Locks](#locks)
-    - [RBAC](#rbac)
-      - [1st Element in main resource](#1st-element-in-main-resource)
-      - [2nd Element as nested `.bicep/nested_rbac.bicep` file](#2nd-element-as-nested-bicepnested_rbacbicep-file)
-    - [Diagnostic settings](#diagnostic-settings)
-    - [Private Endpoints](#private-endpoints)
-      - [1st element in main resource](#1st-element-in-main-resource)
-      - [2nd Element as nested `.bicep/nested_privateEndpoint.bicep` file](#2nd-element-as-nested-bicepnested_privateendpointbicep-file)
-- [Bicep template guidelines](#bicep-template-guidelines)
-  - [Parameters](#parameters)
-  - [Variables](#variables)
-  - [Resources](#resources)
-  - [Modules](#modules)
-    - [Deployment names](#deployment-names)
-  - [Outputs](#outputs)
-- [ReadMe](#readme)
-- [Parameter files](#parameter-files)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Modules Design
 
 This section gives you an overview of the design principals the bicep modules follow.
