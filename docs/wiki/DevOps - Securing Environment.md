@@ -69,9 +69,9 @@ The above chart displays a possible implementation of self-hosted runners within
 
 ## Further Reading
 
-[DevSecOps in GitHub - Azure Solution Ideas]: <https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/devsecops-in-github>
-[GitHub Actions Runner Repo]: <https://github.com/actions/runner>
-[Using self-hosted runners in a workflow - GitHub Docs]: <https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow>
-[GitHub - Azure/login: Connect to Azure]: <https://github.com/Azure/login>
-[Managing access to self-hosted runners using groups - GitHub Docs]: <https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups>
-[Security hardening for GitHub Actions - GitHub Docs]: <https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions>
+- [DevSecOps in GitHub - Azure Solution Ideas](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/devsecops-in-github)
+- [GitHub Actions Runner Repo](https://github.com/actions/runner)
+- [Using self-hosted runners in a workflow - GitHub Docs](https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow)
+- [GitHub - Azure/login: Connect to Azure](https://github.com/Azure/login)
+- [Managing access to self-hosted runners using groups - GitHub Docs](https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups)
+- [Security hardening for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions)
