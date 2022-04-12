@@ -12,7 +12,7 @@ To gather a local copy of the library, you essentially have a few options to cho
 <summary>Download a release</summary>
 
 To download a specific release version of the repository:
-1. Navigate to the [releases](https://github.com/Azure/ResourceModules/releases) page.
+1. Navigate to the [releases](https://github.com/Azure/BicepModulesDemo/releases) page.
 1. Scroll to the `'Assets'` section at the bottom end of the release you'd like to download
 1. Here you will find a packaged version of the repository (as it was when the release was created) and can download it with a simple click on the `'Source code'` package (e.g. `Source code (zip)`) itself. This will start the download and drop the file in your default download folder.
 
@@ -44,7 +44,7 @@ To clone the latest version of the repository
 1. Execute
 
     ```PowerShell
-    git clone 'https://github.com/Azure/ResourceModules.git'
+    git clone 'https://github.com/Azure/BicepModulesDemo.git'
     ```
 
 </details>

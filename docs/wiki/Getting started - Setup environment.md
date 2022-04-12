@@ -57,7 +57,7 @@ To save a local copy of the repository you can either clone the repository or do
 A clone is a direct reference to the source repository which enables you to pull updates as they happen in the source repository. To achieve this you have to have `Git` installed and run the command
 
 ```PowerShell
-  git clone 'https://github.com/Azure/ResourceModules.git'
+  git clone 'https://github.com/Azure/BicepModulesDemo.git'
 ```
 
 from a command-line of your choice (e.g. PowerShell).
@@ -66,7 +66,7 @@ If you instead just want to have a copy of the repository's content you can inst
 
  <img src="./media/cloneDownloadRepo.JPG" alt="How to download repository" height="266">
 
-Alternatively, you can also do the same with a specific release by navigating to the [releases](https://github.com/Azure/ResourceModules/releases) page, scroll to the `'Assets'` section at the bottom end of the release you'd like to get and download the packaged release (as it was when the release was created) with a simple click on the `'Source code'` package (e.g. `Source code (zip)`) itself.
+Alternatively, you can also do the same with a specific release by navigating to the [releases](https://github.com/Azure/BicepModulesDemo/releases) page, scroll to the `'Assets'` section at the bottom end of the release you'd like to get and download the packaged release (as it was when the release was created) with a simple click on the `'Source code'` package (e.g. `Source code (zip)`) itself.
 
   <img src="./media/SetupEnvironment/downloadZipRelease.png" alt="Download zip" height="150">
 

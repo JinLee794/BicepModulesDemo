@@ -1,21 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Securing Environment](#securing-environment)
-  - [_Navigation_](#_navigation_)
-  - [GitHub Security](#github-security)
-    - [DevSecOps in GitHub](#devsecops-in-github)
-      - [**Potential use cases**](#potential-use-cases)
-  - [Security in Azure Infrastructure](#security-in-azure-infrastructure)
-    - [Self-Hosted Runners](#self-hosted-runners)
-  - [Further Reading](#further-reading)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Securing Environment
-
-This provides an 
 
 ---
 
@@ -44,7 +27,7 @@ Main Topics:
 ### DevSecOps in GitHub
 
 [DevSecOps](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/devsecops-in-github)
- adheres to security best practices by adopting a [shift-left](https://devops.com/devops-shift-left-avoid-failure/) strategy that focuses on qualtity and proactive measures to prevent problems instead of relying on detection.
+ adheres to security best practices by adopting a [shift-left](https://devops.com/devops-shift-left-avoid-failure/) strategy that focuses on quality and proactive measures to prevent problems instead of relying on detection.
 
 #### **Potential use cases**
 
