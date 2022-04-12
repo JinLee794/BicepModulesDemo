@@ -5,7 +5,6 @@
 ## _Navigation_
 
 - [Securing Environment](#securing-environment)
-  - [GitHub Security](#github-security)
   - [DevSecOps in GitHub](#devsecops-in-github)
   - [**Potential use cases**](#--potential-use-cases--)
 - [Security in Azure Infrastructure](#security-in-azure-infrastructure)
@@ -14,14 +13,12 @@
 
 ---
 
-## GitHub Security
-
-### DevSecOps in GitHub
+## DevSecOps in GitHub
 
 [DevSecOps](https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/devsecops-in-github)
  adheres to security best practices by adopting a [shift-left](https://devops.com/devops-shift-left-avoid-failure/) strategy that focuses on quality and proactive measures to prevent problems instead of relying on detection.
 
-#### **Potential use cases**
+### **Potential use cases**
 
 GitHub DevSecOps installations cover many security scenarios. Possibilities include the following cases:
 
