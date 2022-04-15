@@ -56,7 +56,7 @@ Indeed, due to GitFlow’s complexity, it could slow down the development proces
 
 Thus, in that case a much simpler workflow such as GitHub Flow is recommended.
 
-More about GitFlow [here](./GitFlow.md)
+More about GitFlow [here](./GitFlow)
 
 ## GitHub Flow
 

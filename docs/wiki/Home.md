@@ -10,9 +10,8 @@ If you're unfamiliar with Infrastructure as Code, or wonder how you can use the 
 
 ## _Navigation_
 
-- [The context](./The%20context)
-  - [Infrastructure as Code](./The%20context%20-%20IaC)
-  - [CARML overview](./The%20context%20-%20CARML%20overview)
+- [Context](./Context)
+  - [Infrastructure as Code](./Context%20-%20IaC)
 - [DevOps Security Topics](./DevOps)
   - [Branching Strategies](./DevOps%20-%20Branching%20Strategies)
     - [Git Flow](./DevOps%20-%20Branching%20Strategies#GitFlow)
