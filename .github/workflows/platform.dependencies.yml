@@ -270,7 +270,7 @@ jobs:
 
             $null = Convert-TokensInFile @ConvertTokensInputs
 
-            # Get storage account name
+            # Get storage account name 
             $storageAccountParameters = (ConvertFrom-Json (Get-Content -path $parameterFilePath -Raw)).parameters
 
             # Upload files to storage account
