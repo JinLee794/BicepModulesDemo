@@ -159,7 +159,7 @@ var virtualNetworkRules = [for index in range(0, (empty(networkAcls) ? 0 : lengt
 }]
 
 var maxNameLength = 24
-var uniqueStorageNameUntrim = '${uniqueString('Storage Account${basetime}')}'
+var uniqueStorageNameUntrim = uniqueString('Storage Account${basetime}')
 var uniqueStorageName = length(uniqueStorageNameUntrim) > maxNameLength ? substring(uniqueStorageNameUntrim, 0, maxNameLength) : uniqueStorageNameUntrim
 
 var supportsBlobService = storageAccountKind == 'BlockBlobStorage' || storageAccountKind == 'BlobStorage' || storageAccountKind == 'StorageV2' || storageAccountKind == 'Storage'
