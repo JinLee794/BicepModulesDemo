@@ -11,10 +11,10 @@ The platform supports both ARM and Bicep and can be leveraged using GitHub actio
   <img alt="Super Linter" src="https://github.com/JinLee794/BicepModulesDemo/actions/workflows/linter.yml/badge.svg" />
 </a>
 <a href="https://github.com/JinLee794/BicepModulesDemo/issues">
-  <img alt="Issues" src="https://img.shields.io/github/issues/JinLee794/ResourceModules?color=0088ff" />
+  <img alt="Issues" src="https://img.shields.io/github/issues/JinLee794/BicepModulesDemo?color=0088ff" />
 </a>
 <a href="https://github.com/JinLee794/BicepModulesDemo/pulls">
-  <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/JinLee794/ResourceModules?color=0088ff" />
+  <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/JinLee794/BicepModulesDemo?color=0088ff" />
 </a>
 
 ## Consumption Model
