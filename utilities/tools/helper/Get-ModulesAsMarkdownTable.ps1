@@ -5,7 +5,7 @@ Generate the status URL for GitHub module action workflows
 
 .DESCRIPTION
 Generate the status URL for GitHub module action workflows
-E.g.  # [![AnalysisServices: Servers](https://github.com/Azure/ResourceModules/actions/workflows/ms.analysisservices.servers.yml/badge.svg)](https://github.com/Azure/ResourceModules/actions/workflows/ms.analysisservices.servers.yml)
+E.g.  # [![AnalysisServices: Servers](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.analysisservices.servers.yml/badge.svg)](https://github.com/JinLee794/BicepModulesDemo/actions/workflows/ms.analysisservices.servers.yml)
 
 .PARAMETER name
 Mandatory. The name of the module to create the url for
@@ -22,7 +22,7 @@ Mandatory. The Organization the repository is hosted in to create the url for
 .EXAMPLE
 Get-PipelineStatusUrl -name 'servers' -provider 'Microsoft.AnalysisServices' -RepositoryName 'ResourceModules' -Organization 'Azure'
 
-Generate a status badge url for the 'service' module of the 'Microsoft.AnalysisServices' provider in repo 'Azure/ResourceModules'
+Generate a status badge url for the 'service' module of the 'Microsoft.AnalysisServices' provider in repo 'JinLee794/BicepModulesDemo'
 #>
 function Get-PipelineStatusUrl {
 
@@ -449,7 +449,7 @@ Get-ModulesAsMarkdownTable -path 'C:\dev\Modules' -ColumnsInOrder @('Resource Ty
 Generate a markdown table for all modules in path 'C:\dev\Modules' with only the 'Resource Type' & 'Name' columns, , sorted by 'Name'
 
 .EXAMPLE
-Get-ModulesAsMarkdownTable -path 'C:\dev\ip\Azure-Modules\ResourceModules\arm' -RepositoryName 'ResourceModules' -Organization 'Azure' -ColumnsInOrder @('Name','TemplateType','Status','Deploy')
+Get-ModulesAsMarkdownTable -path 'C:\dev\ip\Azure-Modules\BicepModulesDemo\arm' -RepositoryName 'ResourceModules' -Organization 'Azure' -ColumnsInOrder @('Name','TemplateType','Status','Deploy')
 
 Generate a markdown table for all modules in path 'C:\dev\Modules' with only the 'Name','TemplateType','Status' &'Deploy' columns, sorted by 'Name'
 #>
